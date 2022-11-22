@@ -1,7 +1,7 @@
 # La “Longue Marche” à Travers la Théorie de Galois
 Janvier à Juin 1981 
 
-[pdf](https://agrothendieck.github.io/divers/galois.pdf)
+[[pdf]](https://agrothendieck.github.io/divers/galois.pdf)
 
 Transcription based on ["Archives Grothendieck"](https://grothendieck.umontpellier.fr/archives-grothendieck/) <br>
 Cote no's 140-2 -- 140-4
