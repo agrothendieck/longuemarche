@@ -6,5 +6,507 @@
 
 
 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\chapter*{\S \space 1. --- TOPOS MULTIGALOISIENS}\thispagestyle{empty}
+\addcontentsline{toc}{section}{1. Topos multigaloisiens}
+\label{sec:1}
+\section*{}
+
+{
+Proposition ({\bf 1.1}). --- \it Soit $E$ une catégorie. Conditions équivalentes :
+\begin{enumerate}
+    \item[a)] $E$ est un topos, et tout objet de $E$ est localement constant.
+    \item[b)] $E$ est équivalent à une catégorie $\widehat{C}$, où $C$ est un groupoïde 
+    (N.B. On verra plus loin que l'on peut choisir $C$ \emph{canoniquement}).
+    \item[b')] Il existe une famille $(G_i)_{i \in I}$ de groupes et une équivalence de catégories
+    $$
+    E \xlongrightarrow{\approx} \prod_{i \in I}\Ens(G_i)
+    $$
+    \item[c)] Conditions d'exactitudes ad-hoc, du type de celles données dans SGA 1\dots
+\end{enumerate}
+}
+\vskip .5cm
+
+{\bf Démonstration} : b) $\Rightarrow$ b') $\Rightarrow$ a) immédiat. Pour a) $\Rightarrow$ b) je suis moins sur, peut être faut-il supposer que $E$ est localement connexe, et qu'il a suffisamment de foncteurs fibres i.e. suffisamment de points.
+\vskip .5cm
+{
+Définition ({\bf 1.2}). --- \it Si les conditions équivalentes b), b') ci-dessus sont satisfaites, on dit que 
+$C$ est un \emph{topos multigaloisien} (ou une \emph{catégorie multigaloisienne}).
+}
+
+\vskip .5cm
+{
+Proposition ({\bf 1.3}). --- \it
+\begin{enumerate}
+    \item[a)] Si $E$ est multigaloisien tout topos induit $C/S$ aussi.
+    \item[b)] Toute somme de topos multigaloisiens (i.e. tout produit de catégories multigaloisiennes)
+    est un topos multigaloisien.
+\end{enumerate}
+}
+
+\vskip .5cm
+
+{
+Proposition ({\bf 1.4}). --- \it Soient $E$ un topos, $C$ la catégorie des points de $E$, (opposée à 
+la catégorie des foncteurs fibres sur $E$). Le foncteur canonique $E \times C^{\circ} \to \Ens$ induit 
+un foncteur canonique
+$$
+E \to \Hom(E^\circ, \Ens) \defeq \widehat{C}
+$$
+Ceci posé [$E$ étant multigaloisien]
+\begin{enumerate}
+    \item[a)] $C$ est un groupoïde (appelé groupoïde fondamental du topos multigaloisien $E$ et souvent
+    noté $\Pi_1(E)$).
+    \item[b)] $E \to \widehat{C}$ est une équivalence de catégories.
+\end{enumerate}
+}
+\vskip .5cm
+
+Un objet $S$ d'un topos $E$ est dit $0$-connexe s'il est $\neq \emptyset_E$ (i.e. n'est pas objet initial) et s'il est connexe (i.e. $S \isom S' \amalg S''$ implique $S'$ ou $S'' \isom \emptyset_E$) - cela signifie aussi que le topos induit $E/S$ est $0$-connexe i.e. n'est pas le topos initial (``topos vide'', équivalent à la catégorie finale) et qu'il est connexe, i.e. \dots
+
+On dit que $S$ est \emph{$1$-connexe} (ou \emph{simplement connexe}) s'il est $0$-connexe et si tout objet $S'$ de $E/S$ localement constant est constant - ce qui ne dépend encore que du topos induit $E/S$, qui sera dit alors \emph{$1$-connexe}.
+
+\vskip .5cm
+
+{
+Proposition ({\bf 1.5}). --- \it Soit $E$ un topos multigaloisien, et soit $S$ un objet de $E$. Conditions équivalentes :
+\begin{enumerate}
+    \item[a)] $S$ est $1$-connexe
+    \item[b)] $S$ est $0$-connexe et projectif
+    \item[c)] Le foncteur covariant représenté par $S$
+    $$
+    T \mapsto \Hom_E(S, T)
+    $$
+    est un foncteur fibre, ou encore (comme il est déjà exact à gauche) il commute aux $\varinjlim$
+    inductives quelconques (N.B. il suffit qu'il commute aux sommes et aux passages aux quotients \dots)
+    \item[d)] $E/S$ est équivalent au topos ponctuel
+    \item[e)] (Si $E = \widehat{C}$, $C$ un groupoïde) le foncteur $S$ sur $C$ est représentable.
+\end{enumerate}
+}
+\vskip .5cm
+
+{
+Définition ({\bf 1.6}). --- \it On dit alors, parfois que $S$ (ou mieux, le topos $E/S$) est un \emph{revêtement universel} du topos multigaloisien $E$.
+}
+
+\vskip .5cm
+
+{
+Proposition ({\bf 1.7}). --- \it Soit $E_\circ$ la sous-catégorie pleine de $E$ formée des objets
+$1$-connexes (de la catégorie multigaloisienne $E$), et $\Pi_1(E)$ le groupoïde fondamental de $E$. On a par ({\bf 1.5}). un foncteur canonique
+$$
+E_\circ \to \Pi_1(C)
+$$
+(associant à tout $S \in Ob(E_\circ)$ le foncteur fibre qu'il représente, ou plutôt le ``point'' correspondant de $C$), qui est (non seulement pleinement fidèle mais même) une équivalence de catégorie :
+tout foncteur fibre sur $E$ est représentable (par un objet ($1$-connexe) essentiellement unique comme de juste \dots)
+}
+
+\vskip .5cm
+{
+Corollaire ({\bf 1.8}). --- \it Soit $P$ un ``point'' de $E$ (associé à un foncteur fibre $F_P$). Il existe un objet $1$-connexe $S$ de $E$ et un relèvement
+\[\begin{tikzcd}
+	P && {E/S} \\
+	& E
+	\arrow[from=1-1, to=2-2]
+	\arrow[from=1-3, to=2-2]
+	\arrow["\alpha", from=1-1, to=1-3]
+\end{tikzcd}\]
+(i.e. $\alpha \in F(S)$) et cela détermine $(S, \alpha)$ à isomorphisme près.
+
+En fait, $S$ est l'unique objet de $E$ qui représente $F_P$ \dots
+}
+\vskip .5cm
+
+{
+Définition ({\bf 1.9}). --- \it On dit que $S$ (ou $E/S$) est le \emph{revêtement universel ponctué au dessus} de    $P$ déterminé par le point $P$.
+}
+\vskip .5cm
+{
+Scholie ({\bf 1.10}). --- \it Se donner un ``point'' du topos multigaloisien $E$, ou se donne un revêtement
+universel, revient essentiellement au même : chacun détermine l'autre \dots
+}
+
+\vskip .5cm
+
+{
+Proposition ({\bf 1.11}). --- \it Soient $E$, $E'$ deux topos multigaloisiens, $\Pi_1(E)$, $\Pi_1(E')$
+leur groupoïdes fondamentaux. Le foncteur évident
+$$
+\underline{\Hom}_{\text{top}}(E, E') \to \underline{\Hom}(\Pi_1(E), \Pi_1(E'))
+$$
+est une équivalence de catégories ; posant $C = \Pi_1(E)$, $C' = \Pi_1(E')$ on trouve une équivalence 
+quiasi-inverse en composant
+$$\diagram
+\underline{\Hom}(C, C') & \rArr & \underline{\Hom}_{\text{top}}(\widehat{C}, \widehat{C'})
+&~~~ \xlongrightarrow{\approx} ~~& \underline{\Hom}_{\text{top}}(E, E') \\
+& & \cap & &  & &  & & \\
+ &  & \underline{\Hom}(\widehat{C'}, \widehat{C})
+&  &   \\
+\enddiagram$$
+}
+
+\vskip .5cm
+
+({\bf 1.12}). {\bf Explicitation du cas ou $E$, $E'$ sont $0$-connexes et ponctués, donc donnés comme
+$E \isom \Ens(G)$, $E' \isom \Ens(G')$ \dots}
+
+
+
+
+
+
+
+
+
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\chapter*{\S \space 2. --- APPLICATIONS AUX REVÊTEMENTS DES TOPOS}\thispagestyle{empty}
+\addcontentsline{toc}{section}{2. Application aux revêtements des topos}
+\label{sec:2}
+\section*{}
+
+{
+Théorème ({\bf 2.1}). --- \it Soit $E$ un topos localement connexe (i.e. dont tout objet est somme d'objets connexes) et localement simplement connexe (i.e. admettant un système de générateurs qui sont $1$-connexes)\footnote{N.B. peut-être faut-il supposé que $E$ ait ``assez de points'' i.e. assez de foncteurs libres\dots}. Alors la catégorie $E_{lc}$ des objets localement constants de $E$ est un topos multigaloisien, et l'inclusion
+$$
+E_{lc} \hookrightarrow E \leqno{(2.1.1.)}
+$$
+commute aux $\varprojlim$ finies (N. B. en fait sans hypothèses sur le topos $E$, $E_{lc}$ est stable par $\varinjlim$ finies) \emph{et} aux $\varinjlim$ quelconques.
+}
+
+\vskip .5cm
+
+{
+Définition ({\bf 2.2}). --- \it On dénote ce topos par $E_{[1]}$, on l'appelle l'enveloppe multigaloisienne
+de $E$ et le morphisme de topos transposé de l'inclusion (2.1.1.) : 
+$$
+E \to E_{[1]}
+$$
+prend le nom de \emph{morphisme canonique}.
+}
+
+\vskip .5cm
+
+N.B. C'est l'équivalent en théorie des topos de l'opération de ``tuage des $\pi_i$ pour $i \geq 2$''.
+
+On peut définir aussi $E_{[0]}$ et une suite
+$$
+E \to E_{[1]} \to E_{[0]}
+$$
+($E_{[0]}$ est le topos \emph{discret} défini par $\pi_0(E)$, qui a un sens satisfaisant dès que $E$
+localement connexe \dots).
+
+Moyennant des hypothèses convenables sur $E$ (du type ``locale contractibilité''), on doit pouvoir définir les $E_{[i]}$ pour tout $i \in \mathbf{N}$, et des morphismes canoniques
+$$
+E \to \dots E_{[i]} \to E_{[i-1]} \to \dots E_{[1]} \to E_{[0]}
+$$
+
+{\bf 2.3}. Le \emph{groupoïde fondamental} de $E$ se définit comme ayant pour objets les points de $E$ (qui induisent des points de $E_{[1]}$ grâce à $E_{[1]} \to E$), et comme morphismes les morphismes \emph{de points} de $E_{[1]}$. On a donc des foncteurs canoniques
+$$
+\underline{\Pt}(E) \xlongrightarrow{\alpha} \Pi_1(E) \xlongrightarrow[\approx]{\beta} \underline{\Pt}(E_{[1]}) \defeq \Pi_1(E_{[1]})
+$$
+où $\beta$ est une équivalence (mais pas surjectif sur les objets), et où bien sur $\alpha$ n'est pas 
+nécessairement une équivalence ni même pleinement fidèle, ou seulement fidèle.
+
+Par exemple si $E$ est $1$-connexe (i.e. $\Pi_1(E)$ équivalent à la catégorie ponctuelle, il ne s'ensuit 
+pas nécessairement que les $\Hom$ dans $\underline{\Pt}(E)$ soient tous de cardinal $\leq 1$ !)
+
+Comme un point $P$ de $E$ définit un point (noté encore $P$ par abus) de $E_{[1]}$, on peut donc définir 
+le \emph{revêtement universel de} $E$ basé en ce point, comme un objet $S$ $1$-connexe de $E_{[1]}$ - il 
+est caractérisé dans $E$ par le fait d'être localement constant, $1$-connexe, et muni d'un relèvement
+$$
+P \to E/S
+$$
+Mais comme $\alpha$ n'est pas une équivalence de catégorie (bien qu'il soit essentiellement surjectif si 
+on suppose que $E$ a suffisamment de points \dots) on \emph{ne peut pas} dire que tout revêtement universel 
+de $E$ soit défini à isomorphisme unique près \dots.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\chapter*{\S \space 3. --- VARIANTES ``PRO-MULTIGALOISIENNES'', RESPECTIVEMENT PROFINIES}\thispagestyle{empty}
+\addcontentsline{toc}{section}{3. Variantes pro-multigaloisiennes}
+\label{sec:3}
+\section*{}
+
+(en se bornant, pour simplifier, au cas des topos localement connexes \dots)
+
+
+
+
+
+
+
+
+
+
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\chapter*{\S \space 4. --- COMPLÉMENT-REMORD SUR LES CATÉGORIES MULTIGALOISIENNES,}\thispagestyle{empty}
+\addcontentsline{toc}{section}{4. Compléments, remords}
+\label{sec:4}
+\section*{}
+
+
+
+Qui précise l'intention que pour un topos $E$, la donnée d'un objet $S \in E$ définit un topos induit
+$E/S \to E$, et que $S$ se reconstitue à isomorphisme près par la connaissance du topos induit en 
+tant que topos \emph{au dessus} de $E$. Ici, $E$ étant multigaloisien, $E/S$ aussi - et il se pose la 
+question quand un morphisme de topos multigaloisien $E' \to E$ peut être considéré comme un morphisme
+d'induction. Si $C = \Pi_1(E)$, $C' = \Pi_1(E')$, la donnée de $E' \to E$ équivaut à la donnée d'un 
+foncteur $C' \to E$.
+
+On trouve que $E' \to E$ est un morphisme d'induction si et seulement si $C' \to C$ est \emph{fidèle}.
+Ainsi, on trouve une équivalence entre la catégorie $E$ (des objets $S$ de la catégorie multigaloisienne
+$E \isom \widehat{C}$, où $C$ est un groupoïde quelconque si on y tient\footnote{un peu vif !}) et la
+catégorie dont les objets sont les ``groupoïdes $C'$ au dessus de $C$'', avec un foncteur structural 
+$C' \to C$ \emph{fidèle}, les morphismes de $C'_1$ dans $C'_2$ étant les \emph{classes d'isomorphie}\footnote{préciser les isomorphismes entre couples $(f, \alpha)$ et $(g, \beta)$ \dots} de couples
+$(f, \alpha)$ d'un foncteur $f: C'_1 \to C'_2$ et d'un isomorphisme de foncteurs 
+$\alpha: p_1 \isommap p_2 \circ f$
+\[\begin{tikzcd}
+	{C'_1} && {C'_2} \\
+	& C
+	\arrow["f", from=1-1, to=1-3]
+	\arrow[""{name=0, anchor=center, inner sep=0}, "{p_2}", from=1-3, to=2-2]
+	\arrow[""{name=1, anchor=center, inner sep=0}, "{p_1}"', from=1-1, to=2-2]
+	\arrow["\alpha", shift right=2, draw=none, from=1, to=0]
+\end{tikzcd}\]
+
+Dans le cas où par exemple $C$ est la catégorie réduite à un seul objet, avec groupe d'automorphisme $G$,
+cette description de la catégorie $E = \Ens(G)$ est évidemment un peu lourde, mais elle s'insère bien dans certains contextes plus bas.
+
+Ainsi, si $k$ est un corps de base, la catégorie $E$ des schémas étales sur $k$ se décrit, en terme d'une
+clôture séparable $k_s$ de $k$ et du groupe profini $\Gamma = \Gal(k_s/k)$, comme les groupoïdes profinis 
+au dessus du groupoïde profini $(\pt, \Gamma)$ \dots Nous voulons insérer cette description dans une 
+``description'' ``galoisienne'' de [certains] schémas [lisses quasi-projectifs de dimension $\leq 1$]
+sur $k$, du moins si $k$ corps de type fini sur $\mathbf{Q}$.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\chapter*{\S \space 5. --- INTRODUCTION DU CONTEXTE ARITHMÉTIQUE; ``CONJECTURE ANABÉLIENNE'' FONDAMENTALE}\thispagestyle{empty}
+\addcontentsline{toc}{section}{{\bf 5.} Introduction du contexte arithmétique ; ``conjecture anabélienne'' fondamentale}
+\label{sec:5}
+\section*{}
+
+Soit $K$ une extension de type fini de $\mathbf{Q}$, et choisissons une clôture algébrique $\overline{K}$ de $K$. On pose $\Gamma = \Gal(\overline{K}/K)$.
+
+{\bf 5.1}. Nous considérons des couples $(X, S)$, où :
+\begin{enumerate}
+    \item[a)] $X$ est un schéma projectif et lisse sur $K$, de dimension $\leq 1$ ;
+    \item[b)] $S$ est sous schéma fini réduit de $X$ (donc fini étale sur $K$) contenu dans la réunion
+    des composantes irréductibles de dimension $1$ de $X$.
+\end{enumerate}
+
+Les morphismes $(X', S') \to (X, S)$ seront par définition les morphismes de schémas
+$$
+f: X' \to X
+$$
+tels que
+$$
+S' = f^{-1}(S)_{\text{\text{red}}}
+$$
+i.e. tels que $\text{supp} S' = f^{-1}(\text{supp} S)$.
+
+Nous cherchons une ``description galoisienne'' de cette catégorie, ou tout au moins d'une 
+sous-catégorie pleine $V_K$ que nous allons définir maintenant.
+
+\vskip .5cm
+
+{
+Lemme {\bf (5.2)}. --- \it Soit $\Omega$ un corps algébriquement clos, $X$ une courbe projective lisse
+connexe sur $\Omega$, $S$ une partie finie de $X(\Omega)$, $U = X \textbackslash S$, $g$ le genre 
+de $X$ et $n = \card S$. Conditions équivalentes :
+\begin{enumerate}
+    \item[a)] $\pi_1(U)$ non abélien,
+    \item[b)] $\Aut(U)$ fini,
+    \item[c)] pour tout schéma connexe réduit $X$ de type fini sur $\Omega$, l'ensemble des morphismes \emph{non constants} de $X$ dans $U$ est fini,
+    \item[d)] on est dans l'un des trois cas suivant : $1 ^{\circ})$ $g \geq 2$ $2 ^{\circ})$ $g = 1$, $n \geq 1$ $3 ^{\circ})$ $g = 0$, $n \geq 3$
+    \item[e)] (si $\Omega \subset  \mathbf{C}$) le revêtement universel de $X(\mathbf{C}) \textbackslash S(\mathbf{C})$ est isomorphe au demi plan de Poincaré,
+    \item[f)] (??) (si $\Omega = \overline{\mathbf{Q}}$, $S \neq \emptyset$) Le revêtement universel de $X \textbackslash S = U$ est isomorphe à celui de $\mathbb{P}^1_{\Omega} \textbackslash \{ 0, 1, \infty \}$.
+\end{enumerate}
+}
+
+\vskip .5cm
+{
+Définition {\bf (5.3)}. --- \it On dit alors que $(X, S)$ est anabélien.
+}
+\vskip .5cm
+
+Comme cette condition est (par d) par exemple) invariante par extension du corps de base
+algébriquement clos, on étend cette définition au cas d'un couple $(X, S)$, avec $(X, S)$ comme dans
+(5.1) (N.B. On regarde séparément les composantes connexes de $X_{\overline{K}}$\dots). Dorénavant, dans (5.1) nous allons nous borner au cas de couples $(X, S)$ anabéliens.
+
+{\bf (5.4)}. A un couple $(X, S)$ (pas nécessairement anabélien) - plus généralement à tout schéma $X$ localement de type fini sur $S$ - on associe un objet ``de nature galoisienne'' [à] savoir le groupoïde fondamental profini $\Pi(X)$ de $X$ (fermé (?) si on veut des revêtements universel de $X$), \emph{muni} d'un foncteur canonique
+\[\begin{tikzcd}
+	{\Pi_1(X)} & {\Pi_1(K)} \\
+	& {[\Tors (\Gamma)]}
+	\arrow["\approx"', from=1-2, to=2-2]
+	\arrow[from=1-1, to=1-2]
+\end{tikzcd}\]
+
+Un morphisme de $K$-schémas
+$$
+X' \xlongrightarrow{f} X
+$$
+définit un foncteur
+$$
+\Pi_1(X') \xlongrightarrow{\Pi_1(f)} \Pi_1(X)
+$$
+et un isomorphisme de commutation $\alpha$:
+\[\begin{tikzcd}
+	{\Pi_1(X')} && {\Pi_1(X)} \\
+	& {\Pi_1(K)}
+	\arrow[""{name=0, anchor=center, inner sep=0}, from=1-1, to=2-2]
+	\arrow[""{name=1, anchor=center, inner sep=0}, from=1-3, to=2-2]
+	\arrow["{\Pi_1(f)}", from=1-1, to=1-3]
+	\arrow["\alpha", shorten <=12pt, shorten >=12pt, from=0, to=1]
+\end{tikzcd}\]
+
+On trouve ainsi un foncteur, de la catégorie des schémas localement de type fini $X$ sur $K$, dans la ``catégorie des groupoïdes profinis sur $\Pi_1(K)$'', définie comme au $n^{\circ} 4$.
+
+Quand on passe à la catégorie des schémas localement de type fini connexes, \emph{munis d'un point géométrique au dessus de $\overline{K}/K$}\footnote{il vaut mieux dire : munis d'un revêtement universel\dots} (i.e. d'un $x \in X$, d'une clôture séparable $\overline{k(x)}$ de $k(x)$ et d'un $K$-morphisme $\overline{K} \hookrightarrow \overline{k(x)}$), cela correspond à un foncteur des $K$-schémas localement de type fini et connexes, ponctués sur $\overline{K}/K$ (au ses précédent) vers la catégorie des groupes profinis $\Pi$ munis d'un homomorphisme (de groupes profinis)
+$$
+\Pi \to \Gamma
+$$
+(dont l'image sera d'ailleurs nécessairement ouverte donc d'indice fini, pour des objets provenant de $X$ comme [ci-]dessus).
+
+\vskip .5cm
+{
+Conjecture {\bf (5.5)}\footnote{c'est un peu faux cf $n^{\circ} 9$} --- \it La restriction du foncteur précédent $X \mapsto (\Pi_1(X)~\text{sur}~\Pi_1(K))$ aux schémas projectifs lisses de dimension $\geq 1$ et anabéliens (i.e. tels que $(X, S)$ soit anabélien, où $S$ est la réunion des composantes de dimension $0$) est pleinement fidèle.
+}
+\vskip .5cm
+Il revient au même de dire ceci:
+
+\vskip .5cm
+{
+Définition {\bf (5.5 bis)}. --- \it Le foncteur qui, à tout $X$ comme dans (5.5.) et de plus \emph{connexe}, (de dimension $0$ ou $1$), muni d'un point géométrique $\xi$ au dessus de $\overline{K}$, associe le groupe profini $\pi_1(X, \xi)$ sur $\Gamma = \pi_1(K, \xi)$, est un foncteur pleinement fidèle.
+}
+\vskip .5cm
+
+Il faut quand même expliciter les morphismes $(X, \xi) \to (X', \xi')$ dans la catégorie de départ : morphismes de $K$-schémas $X \xlongrightarrow{f} X'$, munis d'un morphisme (ou classe de chemins) $f(\xi) \isom \xi'$.
+
+Ces conjectures se réduisent à la théorie de Galois, pour des $X$ de dimension $0$. Pour des $X$ de dimension $1$, elles ne concernent que des $X$ tels que les composantes connexes de $X_{\overline{K}}$ soient de genre $\geq 2$ (ou, ce qui revient au même, introduisant l'extension finie $K' = \mathrm{H}^0(X, \underline{\cO}_X)$) de $K$, de sorte que $X$ soit géométriquement connexe sur $K'$, tel que $X$ comme courbe algébrique sur $K'$ soit de genre $\geq 2$. On voit aisément (prenant $X' = \Spec(K)$, $X = \mathbb{P}^1_K$ courbe elliptique sur $K$) qu'elles deviennent fausses sinon - c'est pourquoi il a fallu introduire $S$, plus l'hypothèse anabélienne sur $(X, S)$, pour associer à $(X, S)$ une structure plus riche que $\Pi_1(X)$ sur $\Pi_1(K)$. On trouvera des conjectures (par exemple) pour $X$ courbe géométriquement connexe sur $K$ de genre $1$ (resp. $0$), \emph{pourvu} que $S$ soit de degré $\geq 1$ (resp. $\geq 3$).
+
+
+
+
+
+
+
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\chapter*{\S \space 6. --- ANALYSE LOCALE DE $(X,S)$ EN UN $s\in S$}\thispagestyle{empty}
+\addcontentsline{toc}{section}{6. Analyse locale de $(X,S)$ en un $s\in S$}
+\label{sec:6}
+\section*{}
+
+On s'intéresse au cas où dim$_s(X) = 1$, i.e. où $s$ n'est pas point isolé dans $X$.
+
+Soit $\underline{\cO}_s$ le hensélisé (ou le complété, si on y tient) de $\underline{\cO}_{X, s}$, $K_s$ son corps de fractions, $D^*_s = \Spec (K_s)$, on identifie $s$ à $\Spec k(s)$ ($k(s)$ est le corps résiduel de l'anneau-jauge $\underline{\cO}_s$). Considérons $D_s = \Spec (\underline{\cO}_s)$ (``disque arithmétique relatif à $k(s)$''), donc $D^*_s = D_s$ \textbackslash $s = ~(\text{``disque épointé''}) \to D_s$, on a :
+\[\begin{tikzcd}
+	{\Pi_1(D^*_s)} & {\Pi_1(D_s)} & {\Pi_1(K)} \\
+	& {\Pi_1(s)}
+	\arrow["{\sigma_s}"', from=1-1, to=2-2]
+	\arrow["\approx", from=2-2, to=1-2]
+	\arrow["{j_s}"', from=2-2, to=1-3]
+	\arrow["{q_s}"', from=1-2, to=1-3]
+	\arrow["{\text{fidèle}}", from=1-2, to=1-3]
+	\arrow["{i_s}"', from=1-1, to=1-2]
+	\arrow["{\text{épi sur} \Hom}", from=1-1, to=1-2]
+	\arrow["{p_s}", curve={height=-12pt}, draw=none, from=1-1, to=1-3]
+\end{tikzcd}\leqno{(6.1)} \]
+
+Pour le choix d'un point géométrique $\xi_s$ de $D^*_s$ sur $\overline{K}/K$ (i.e. d'une clôture algébrique $\overline{K}_s$ de $K_s$ et d'une $K$-injection $\overline{K} \hookrightarrow \overline{K}_s$), ce diagramme de groupoïdes se reflète en un homomorphisme de groupes \footnote{N.B. Le choix de $\overline{K}_s$ implique un choix de $\overline{k}_s$ - c'est la flèche pointillée (6.1).} de
+\[\begin{tikzcd}
+	{\pi_1(D^*_s, \xi_s)} && {\pi_1(k(s), \xi_s)} && \Gamma \\
+	\\
+	{\Gal(\overline{K_s}/K_s)} && {\Gal(\overline{k(s)}/k(s))}
+	\arrow["\sim"', from=1-3, to=3-3]
+	\arrow["{\text{surjectif}}", from=1-1, to=1-3]
+	\arrow["{\text{injectif}}", hook, from=1-3, to=1-5]
+	\arrow["\sim", from=3-1, to=1-1]
+\end{tikzcd}\leqno{(6.2)}
+\]
+
+dont le noyau, on le sait par Kummer, est canoniquement isomorphe à $T(\overline{k}_s) \isom T(\overline{K}_s)$ [$\isom T(\overline{K})$].
+
+On veut exprimer la donnée de cet isomorphisme prévilégié comme une structure supplémentaire sur (6.1) - i.e. sur le groupoïde $\Pi_1(D^*_s)$ sur $\Pi_1(s)$ (ou sur $\Pi_1(K)$) - On peut le dire ainsi : si à tout $\xi \in \Pi_1(D^*_s)$, on associe le noyau de 
+$$
+\Aut(\xi) \to \Aut(i(\xi))
+$$
+(qui est aussi le noyau des composés
+$$
+\Aut(\xi) \to \Aut(i(\xi)) \to \Aut(p_s(\xi) = q_s(i_s(\xi)))
+$$
+on trouve un groupe \emph{abélien}, qui ne dépend (à isomorphisme près) que de $i(\xi) = \xi'$ [ceci, et la suite de la phrase, marche chaque fois qu'on a un foncteur de groupoïdes connexes à noyau abélien et surjectif sur les $\Hom$], et pour $\xi'$ variable forme un système local sur $\Pi_1(D_s)$, qu'on peut appeler le $\pi_1$ \emph{relatif} du groupoïde $\Pi_1(D^*_s)$ sur le groupoïde $\Pi_1(D_s)$.
+
+Ceci dit, on a un isomorphisme de systèmes locaux de groupes
+$$
+\pi_1(\Pi_1(D^*_s)~\text{sur}~\Pi_1(D_s)) \isom q^*_s(T_K)
+$$
+où $T_K$ est le système local de Tate sur $K$.
+
+Posons maintenant
+$$
+D_S = \amalg_{s \in S} D_s \quad \text{(``multidisque arithmétique en}~S\text{''})
+$$
+$$
+D^*_S = \amalg_{s \in S} D^*_s \quad \text{(``multicouronne arithmétique en}~S\text{''})
+$$
+On a un homomorphisme de groupoïdes
+$$
+\Pi_1(D^*_s) \xlongrightarrow{\sigma_s} \Pi_1(S) \quad (\xlongrightarrow{j_s} \Pi_1(K))
+$$
+et un isomorphisme canonique
+$$
+\Pi_1(D^*_s) / \Pi_1(S)) \isom j^*_S(T(K))
+$$
+%review
+Ceci posé, on a aussi un morphisme
+$$
+D^*_S \xlongrightarrow{\rho_S} X \textbackslash S
+$$
+induisant
+$$
+\Pi_1(D^*_S) \xlongrightarrow{\Pi_1(\rho_S)} \Pi(X \textbackslash S).
+$$
+
+
+
+
+
+
+
 
 %End
