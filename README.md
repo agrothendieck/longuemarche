@@ -6,15 +6,15 @@ Janvier à Juin 1981
 Transcription based on the ["Archives Grothendieck"](https://grothendieck.umontpellier.fr/archives-grothendieck/) <br>
 Cote no's 140-2 -- 140-4
 
-### Part I $\S$ 1 - 52
+### [Part I](https://github.com/agrothendieck/longuemarche/blob/main/lmI.tex) $\S$ 1 - 52
 Cote n 140-2
 
-- [x] Transcription
+- [x] **Transcription**
 - [ ] Review
 
 
 
-### Part II $\S$ 38 - 52
+### [Part II](https://github.com/agrothendieck/longuemarche/blob/main/lmII.tex) $\S$ 38 - 52
 Cote n 140-3, 140-4
 
 - [ ] Transcription
